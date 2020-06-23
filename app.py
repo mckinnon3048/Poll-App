@@ -3,11 +3,12 @@ from typing import List
 import psycopg2
 from psycopg2.errors import DivisionByZero  # ignored unresolved error
 from dotenv import load_dotenv
+
 import database
 
 
 DATABASE_PROMPT = "Enter the DATABASE_URI value or leave empty to load from .env file: "
-MENU_PROMPT = """-- Menu --
+MENU_PROMPT ="""-- Menu --
 
 1) Create new poll
 2) List open polls
@@ -17,6 +18,7 @@ MENU_PROMPT = """-- Menu --
 6) Exit
 
 Enter your choice: """
+
 NEW_OPTION_PROMPT = "Enter new option text (or leave empty to stop adding options): "
 
 
