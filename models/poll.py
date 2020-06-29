@@ -1,7 +1,7 @@
 from typing import List
-from models import Option
+from connections import create_connection
+from models.option import Option
 import database
-
 
 
 class Poll:
@@ -24,7 +24,7 @@ class Poll:
 
     @property
     def options(self) -> List[Option]:
-        connection = create_connect()
+        connection = create_connection()
         options = database.get_poll_options(connection, self.id)
         connection.close()
         return [Option(option[1], option[2], option[0]) for option in options]
